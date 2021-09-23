@@ -187,3 +187,44 @@ cat1.andar();
 cat1.miar();
 
 //Assim a classe Gato além de miar, ela pode andar e correr, e possui 4 patas, que ela herdou da classe Quadrupede
+
+/*----------------------------------------------*/
+
+// PARTE 6 - SPREAD OPERATOR (Espalhamento)
+//Nessa parte da aula eu aprendi sobre o funcionamento do spread em: array, objeto e argumento de função.
+//Em array e objeto serve para incorporar todo um array ou objeto dentro de outro respectivamente.
+
+let array2 = [1, 2, 3];
+let array3 = [...array2, 8, 9] //incorpora os elementos de array2
+let array4 = [array2, 8, 9] //incorpora O ARRAY array2
+console.log(array3)//tem cinco elementos
+console.log(array4)//tem três elementos
+
+//Em objeto
+let objeto2 = {
+    name: 'Dengão',
+    altura: 1.78
+}
+let objeto3 = {
+    ...objeto2,//incorpora as propriedades do objeto2
+    companheira: 'Denguinho',
+}
+
+let objeto4 = {
+    objeto2,//incorpora O OBJETO objeto2 em si.
+    companheira: 'Denguinho'
+}
+
+console.log(objeto3)//objeto com TRÊS propriedades
+console.log(objeto4)//objeto com DUAS propriedades
+
+//Em uma função, o spread operator serve para deixar indefinido o numero de argumentos
+
+function mostrar (...arg){
+    for(let i = 0; i<arg.length; i++){
+        console.log(arg[i])
+    }
+    console.log(arg.length)
+}
+
+mostrar('Eu', 'amo', 'Liz')
