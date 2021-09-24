@@ -16,7 +16,7 @@ parte1.innerHTML += `Fora do if valor de var age ${age} </br>`
 //Agora vamos ver como funciona o mesmo exemplo, só que com let. A variável agora é idade.
 
 let idade = 13
-
+idade = 14;
 if(true){
     let idade = 98;
     parte1.innerHTML += `</br>Dentro do if valor de let idade ${idade} </br>`
@@ -30,12 +30,12 @@ const idad = 13
 
 if(true){
     const idad = 98;
-    parte1.innerHTML += `</br>Dentro do if valor de const idade ${idade} </br>`
+    parte1.innerHTML += `</br>Dentro do if valor de const idade ${idad} </br>`
 }
 
-parte1.innerHTML += `Fora do if valor de const idade ${idade}</br>`
+parte1.innerHTML += `Fora do if valor de const idade ${idad}</br>`
 
-//Concluindo, toda vez que uma var de mesmo nome é declarada, o valor apresentado será o último atribuído, independente de escopo. Já quando é let, ela difere do escopo onde se encontra. Por fim, uma const ela mantém o primeiro valor atribuido, independente de escopo.
+//Concluindo, toda vez que uma var de mesmo nome é declarada, o valor apresentado será o último atribuído, independente de escopo. Já quando é let ou const, ela difere do escopo onde se encontra. 
 
 //Contudo, o const tem umas particularidades. Primeiro uma particularidade em conjunto com o let: não é possível redeclarar. Uma vez declaradas, tanto const quanto o let não podem serem redeclaradas de novo. Exemplo:
 /*
@@ -228,3 +228,65 @@ function mostrar (...arg){
 }
 
 mostrar('Eu', 'amo', 'Liz')
+
+/*----------------------------------------------*/
+
+// PARTE 7 - DESESTRUCTURING ASSIGNMENT (Atribuição via desestruturação)
+//De acordo com o artigo na mdn: é uma expressão JavaScript que possibilita extrair dados de ARRAYS ou OBJETOS  em variáveis distintas.
+
+var array5 =[10, 20, 30, 40, 50];//declaramos uma array e atribuimos valores a ela
+//Para extrair os dados dela um por um em variáveis diferentes pode mos fazer assim:
+
+var aa = array5[0]; //aa == 10
+var ab = array5[1]; //ab == 20
+var ac = array5[2]; //ac == 30
+var ad = array5[3]; //ad == 40
+var ae = array5[4]; //ae == 50
+
+console.log('Atribuição normal: ' + aa + ' ' + ab + ' ' + ac + ' ' + ad + ' ' + ae)
+
+//Usando o desestructuring temos a seguinte sintaxe:
+
+var [ba, bb, bc, bd, be] = array5;
+
+console.log('Desestructuring: ' + ba + ' ' + bb + ' ' + bc + ' ' + bd + ' ' + be)
+
+//Para ficar mais visível podemos substituir o array5 pelo próprio array:
+// var [ba, bb, bc, bd, be] = [10, 20, 30, 40, 50];
+//Olhando assim, dá pra entender o seu funcionamento.
+
+//Com objeto é o mesmo processo
+
+var objeto5 = {a:0, b:5, c:10, d:15, e:20}
+var oaa = objeto5.a
+var oab = objeto5.b
+var oac = objeto5.c
+var oad = objeto5.d
+var oae = objeto5.e
+
+console.log('Atribuição normal: ' + oaa + ' ' + oab + ' ' + oac + ' ' + oad + ' ' + oae)
+
+//Usando desestructuring há uma diferença em relação ao array. Para a atribuição ocorrer, o nome da variável tem que ser o nome da propriedade
+
+var {a, b, c, d, e} = objeto5;
+console.log('Desestructuring: ' + a + ' ' + b + ' ' + c + ' ' + d + ' ' + e)
+
+//Caso queira-se usar nomes diferentes para as variáveis, deve ser feita assim:
+var {a:oba, b:obb, c:obc, d:obd, e:obe} = objeto5;
+console.log('Usando outra desestructuring' + oba + ' ' + obb + ' ' + obc + ' ' + obd + ' ' + obe)
+console.log(objeto5)
+
+//Usando o Spread Operator na parte de argumentos para reduzir a quantidade de variáveis usadas. 
+
+var [ac, bc, ...outros] = array5;
+
+console.log('Desestructuring + Spread Operator (ARG): ' + ac + ' ' + bc + ' ' + outros) //aqui temos 3 elementos: 10, 20 e [30, 40, 50]
+
+console.log(`Desestructuring + Spread Operator (ARG + Console):` + ac + ' ' + bc, ...outros)// aqui temos 5 elementos: 10, 20, 30, 40, 50
+
+//Por fim, para usar declarar variáveis apenas para o primeiro e o último elementos(ou propriedades), faz-se assim:
+
+var [ad, , , , ed] = array5;
+
+console.log(`Ignorando elementos:`, ad, ed)
+
