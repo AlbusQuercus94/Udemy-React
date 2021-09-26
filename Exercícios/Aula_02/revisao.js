@@ -385,3 +385,25 @@ console.log(person2, Ama, person1)
 
 import * as Vida from "./revisao_export.js"
 console.log(Vida.person1, Vida.amor, Vida.person2)
+
+/*----------------------------------------------*/
+
+//PARTE 10 - ARRAY FUNCTION
+
+//Não é exatamente uma function, mas uma forma de modificar todos os elementos de uma array de acordo com uma function que nós criarmos. Vamos ao exemplo
+
+var array6_1 = [1, 2, 3] //Criamos um array
+
+var array6_2; //Declaramos uma segunda array, aqui que será a modificação
+
+array6_2 = array6_1.map(num => num+3)//Aqui usamos o metodo .map() que cria um novo array a partir de um array e associado a uma função, neste caso uma arrow function com argurmento num e funcionalidade de pegar esse argumento e adicionar 3.
+
+console.log('Array original:',array6_1)
+console.log('Somado 3:',array6_2)
+
+//Podemos ainda, inves de fazer a função dentro de map, apenas chama-la lá
+var vezes4 = (num) => num*4;
+
+array6_2 = array6_1.map(vezes4)
+
+console.log('Multiplicado por 4',array6_2)
