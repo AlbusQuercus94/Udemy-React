@@ -407,3 +407,31 @@ var vezes4 = (num) => num*4;
 array6_2 = array6_1.map(vezes4)
 
 console.log('Multiplicado por 4',array6_2)
+
+/*----------------------------------------------*/
+
+//PARTE 11 - FOR IN/FOR OF
+
+//For of/For in são laços de repetição mais simples de se usar, chamados de ITERAÇÃO. Pecorre todo os elementos de um determinado array.
+
+//Para a iteração de arrays usa-se for of
+
+const array7 = ['Maçã', 'Laranja', 'Banana'];
+for(let value of array7){
+    console.log(value);
+}
+
+//Para a iteração de objetos usa-se for in
+
+const objeto6 = {
+    maca: 13,
+    laranja:17,
+    banana: 15
+}
+
+for(let key in objeto6){
+    console.log(key);
+}//Aqui aparecerá as propriedades do objeto. Para aparecer os valores de cada propriedade usa-se assim.
+for(let key in objeto6){
+    console.log(objeto6[key]);
+}
