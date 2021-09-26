@@ -290,3 +290,71 @@ var [ad, , , , ed] = array5;
 
 console.log(`Ignorando elementos:`, ad, ed)
 
+/*----------------------------------------------*/
+
+// PARTE 8 - VALORES PRIMITIVOS E VALORES DE REFERÊNCIA
+
+//Valores primitivos são valores armazenados a partir da atribuição por valor;
+//Valores de referência são valores armazenados a partir da atribuição por referência.
+
+//Exemplo de Atribuição de Valor Primitivo
+
+var nome = 'Pedro';//Atribuição por valor
+var copianome = nome; //Atribuição por valor
+
+console.log ('var nome =', nome);
+console.log ('var copianome =', copianome);
+
+nome = 'Liz'; //Reatribuição da variável nome
+
+console.log ('var nome =', nome); //Esse valor mudou
+console.log ('var copianome =', copianome);//Esse valor continua o mesmo
+
+//Atribuição por valor só altera a variável que foi alterada. Foi modificado o valor da var nome, mas a var copianome não teve alteração, recebendo o valor original. Isso ocorre porque javascript ler linha por linha, de cima para baixo.
+
+//Exemplo de Atribuição de Valor de Referência.
+
+var nome2 = {name:'Pedro'}; //Atribuição de Valor Primitivo
+var copianome2 = nome2; //Atribuição de Valor Primitivo
+
+console.log ('var nome2 =', nome2);
+console.log ('var copianome2 =', copianome2);//Resultado identico ao anterior
+
+nome2.name = 'Liz'; //Atribuição de valor de referência e não reatribuição de valor
+
+console.log ('var nome2 =', nome2);
+console.log ('var copianome2 =', copianome2);//Modifica ambos os valores.
+
+//Esse é o motivo da possibilidade de se alterar uma const, pois não é uma reatribuição
+
+//Repetindo o exemplo com objeto, mas desta vez usando reatribuição da variável que é um objeto.
+
+var nome3 ={name:'Pedro'}
+var copianome3 = nome3;
+
+nome3 = {name: 'Liz'};//Reatribuição e não mudança da referencia
+copianome3.name = 'Elisete'
+
+
+console.log ('var nome3 =', nome3);
+console.log ('var copianome3 =', copianome3);
+
+//Com array segue o mesmo padrão dos objetos.
+
+var nome4 = ['Pedro'];
+var copianome4 = nome4;
+
+nome4.push('Liz')
+
+console.log ('var nome4 =', nome4);
+console.log ('var copianome4 =', copianome4);
+
+//Podemos também usar o spread operator, assim ele vai por como elemento como já visto antes.
+
+var nome5 ={name:'Pedro'}
+var copianome5 = {...nome5};
+
+nome5.name = 'Liz';
+
+console.log ('var nome5 =', nome5);
+console.log ('var copianome5 =', copianome5);
