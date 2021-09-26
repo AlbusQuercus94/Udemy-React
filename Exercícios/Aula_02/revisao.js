@@ -358,3 +358,30 @@ nome5.name = 'Liz';
 
 console.log ('var nome5 =', nome5);
 console.log ('var copianome5 =', copianome5);
+
+/*----------------------------------------------*/
+
+//PARTE 9 - IMPORT E EXPORT
+
+//Criado um arquivo chamado revisao_export.js para essa parte. Aqui importar o que esta lá.
+
+
+import APP from "./revisao_export.js";
+//Quando o export tem default, a chamada é desse único export. Assim podemos usar um nome diferente da variável lá exportada
+console.log(APP);//aqui deve ser chamada o nome atribuído aqui, e não lá no arquivo exportado.
+
+//Um exemplo de importação de mais de um elemento do arquivo exportado. Dessa vez não há default no elemento export. Usa-se chaves para por os elementos a serem importados.
+import {person1, person2} from "./revisao_export.js"
+
+console.log(person1, 'ama', person2)
+
+//Agora um exemplo de como importar e ainda dar um 'apelido' para o elemento importado. Esse 'apelido' é como ele será chamado no arquivo.
+import {amor as Ama} from "./revisao_export.js"
+
+console.log(person2, Ama, person1)
+// console.log(person1, amor, person2) //mesmo que chamado, só funciona o 'apelido' posto.
+
+//Para importar tudo de uma vez só, usa-se o asterisco '*' dando um 'apelido' para o arquivo. Assim o arquivo se torna um objeto com aquele nome.
+
+import * as Vida from "./revisao_export.js"
+console.log(Vida.person1, Vida.amor, Vida.person2)
