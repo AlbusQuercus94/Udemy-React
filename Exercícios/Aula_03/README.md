@@ -15,7 +15,6 @@ CodePen:[Exercicio](#)
 ## O que aprendi
 
 * [O que é JSX](#)
-* [O que é CSX](#)
 
 ## Passo a Passo
 
