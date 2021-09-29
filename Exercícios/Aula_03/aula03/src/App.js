@@ -1,6 +1,7 @@
 
 import './App.css';
-//Usando o JSX o que precisamos escrever para aparecer uma lista não ordenada usando DOM é o seguinte.
+//Parte 1 = a)
+//a)Usando o JSX o que precisamos escrever para aparecer uma lista não ordenada usando DOM é o seguinte.
 function App() {
   return (
     <div> 
@@ -14,7 +15,7 @@ function App() {
   );
 }
 
-//Usando o JavaScript puro, o mesmo código acima seria escrito da seguinte forma
+//a)Usando o JavaScript puro, o mesmo código acima seria escrito da seguinte forma
 
 // function App() {
 //   return 
